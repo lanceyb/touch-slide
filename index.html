@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Exposure Slide</title>
+    <script type="text/javascript" charset="utf-8" src="touch-slide.js"></script>
+    <style type="text/css" media="all">
+      body { font-size: 16px; }
+      #slide { overflow: hidden; border: 1px solid blue; width: 320px; padding: 10px;}
+      .slide { position: relative; left: 0px; width: 1554px;}
+      .slide h1 { text-align: center; }
+      .slide > div { border: 1px solid yellow; position: relative; top: 0; width: 200px; float: left; transition: 350ms; margin: 0 10px; }
+      .slide > div:first-child { margin-left: 0; }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+      window.onload = function () {
+        window.touchSlide = new TouchSlide(document.getElementById("slide"), {
+          index: 0,
+          transitionEnd: function (event, index, el) {
+          },
+          callback: function (index, el) {
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <div id='slide'>
+        <div class="slide" style='visibility:visible;'>
+          <div id='div-1'><h1>1</h1></div>
+          <div id='div-2'><h1>2</h1></div>
+          <div id='div-3'><h1>3</h1></div>
+          <div id='div-4'><h1>4</h1></div>
+          <div id='div-5'><h1>5</h1></div>
+          <div id='div-6'><h1>6</h1></div>
+          <div id='div-7'><h1>7</h1></div>
+        </div>
+      </div>
+      <button id='prev' onclick='touchSlide.prev()'>prev</button>
+      <button id="next" onclick='touchSlide.next()'>next</button>
+    </div>
+  </body>
+</html>
